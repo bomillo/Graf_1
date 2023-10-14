@@ -74,11 +74,11 @@ namespace Graf
 
             byte[] bytes = new byte[30*30*3];
 
-            for (byte i = 0; i < 90; i++)
+            for (byte i = 0; i < 30; i++)
             {
                 for (byte j = 0; j < 90; j++)
                 {
-                    bytes[i + j * 90] = i;
+                    bytes[i * 90 + j] = i;
                 }
             }
 
