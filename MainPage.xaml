@@ -5,10 +5,46 @@
              x:Class="Graf.MainPage">
     <ContentPage.Resources>
         <drawable:MyCanvas x:Key="myCanvas"/>
+        <drawable:MyCanvas2 x:Key="myCanvas2"/>
     </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*">
-        <GraphicsView Grid.Column="0" Drawable="{StaticResource myCanvas}" x:Name="Canvas" StartInteraction="Canvas_StartInteraction" EndInteraction="Canvas_EndInteraction" DragInteraction="Canvas_DragInteraction">
+    <Grid ColumnDefinitions="300,*">
+        <StackLayout Grid.Column="0" >
+            <Button
+                x:Name="AddCircleButton"
+                Margin="20,5"
+                WidthRequest="290"
+                Text="Load"
+                Clicked="OnLoadClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="AddCircleButton2"
+                Margin="20,5"
+                WidthRequest="290"
+                Text="Save"
+                Clicked="OnSaveClicked"
+                HorizontalOptions="Center" />
+            <Grid ColumnDefinitions="3*,8*" Margin="20,5">
+                <Label Grid.Column="0" Text="Compression" VerticalOptions="Center"></Label>
+                <Entry Grid.Column="1" x:Name="Compression"></Entry>
+            </Grid>
+            <Grid ColumnDefinitions="3*,8*" Margin="20,5">
+                <Label Grid.Column="0" Text="Loaded in: " VerticalOptions="Center"></Label>
+                <Label Grid.Column="1" x:Name="LoadedInText" Text="" VerticalOptions="Center" HorizontalOptions="End"></Label>
+            </Grid>
+
+            <Grid ColumnDefinitions="*" RowDefinitions="300" Margin="20,5">
+                <GraphicsView Grid.Column="0" Grid.Row="0" Drawable="{StaticResource myCanvas2}" x:Name="c_11"></GraphicsView>
+            </Grid>
+            <Button
+    x:Name="AddCircleButton3"
+    Margin="20,5"
+    WidthRequest="290"
+    Text="Reset"
+    Clicked="OnResetClicked"
+    HorizontalOptions="Center" />
+        </StackLayout>
+        <GraphicsView Grid.Column="1" Drawable="{StaticResource myCanvas}"  x:Name="Canvas" MoveHoverInteraction="Canvas_MoveHoverInteraction" StartInteraction="Canvas_StartInteraction" EndInteraction="Canvas_EndInteraction" DragInteraction="Canvas_DragInteraction">
         </GraphicsView>
     </Grid>
 

@@ -9,7 +9,6 @@
             canvas.StrokeSize = 0;
             canvas.FillColor = Colors.White;
             canvas.FillRectangle(dirtyRect);
-
             shapes?.DrawOnCanvas(canvas);
         }
 
