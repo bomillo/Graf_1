@@ -2,7 +2,7 @@
 {
     internal class MyCanvas : IDrawable
     {
-        public List<Shape> shapes;
+        public Shape shape;
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
@@ -17,7 +17,7 @@
             canvas.FillRectangle(100, 100, 5, 5);
             */
 
-            shapes?.ForEach(s => s.DrawOnCanvas(canvas));
+            shape?.DrawOnCanvas(canvas);
         }
 
     }

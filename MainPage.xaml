@@ -10,138 +10,16 @@
     <Grid ColumnDefinitions="330,*">
         <ScrollView>
             <StackLayout >
-                <StackLayout >
-                    <Label Text="Circle" FontSize="24" Margin="20,5"></Label>
-                    <Grid ColumnDefinitions="3*,1*,3*,1*,3*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Center" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="CircleCenterX"></Entry>
-                        <Label Grid.Column="3" Text="Y:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="4" x:Name="CircleCenterY"></Entry>
-                        <Button Grid.Column="5"
-                             Text="Set"
-                             Clicked="SetCircleCenter"
-                             HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,1*,7*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Radius" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="CircleRadius"></Entry>
-                        <Button Grid.Column="3"
-                             Text="Set"
-                             Clicked="SetCircleRadius"
-                             HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,8*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Color" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="1" x:Name="CircleColor"></Entry>
-                    </Grid>
-                    <Button
-                            x:Name="AddCircleButton"
-                        Margin="20,5"
-WidthRequest="290"
-                            Text="Add"
-                            Clicked="OnAddCircleButtonClicked"
-                            HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Line"  FontSize="24"  Margin="20,5"></Label>
-                    <Grid ColumnDefinitions="3*,1*,3*,1*,3*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Start" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="LineStartX"></Entry>
-                        <Label Grid.Column="3" Text="Y:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="4" x:Name="LineStartY"></Entry>
-                        <Button Grid.Column="5"
-      Text="Set"
-      Clicked="SetLineStart"
-      HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,1*,3*,1*,3*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="End" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="LineEndX"></Entry>
-                        <Label Grid.Column="3" Text="Y:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="4" x:Name="LineEndY"></Entry>
-                        <Button Grid.Column="5"
-      Text="Set"
-      Clicked="SetLineEnd"
-      HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,8*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Color" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="1" x:Name="LineColor"></Entry>
-                    </Grid>
-                    <Button
-                        Margin="20,5"
-                        WidthRequest="290"
-                        x:Name="AddLineButton"
-                        Text="Add Line!"
-                        Clicked="OnAddLineButtonClicked"
-                        HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout >
+                <Button Grid.Column="5"
+                    Text="Add point"
+                    Clicked="SetLineStart"
+                    HorizontalOptions="Center" />
 
-                    <Label Text="Rectangle"  FontSize="24"  Margin="20,5"></Label>
-                    <Grid ColumnDefinitions="3*,1*,3*,1*,3*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Start" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="RectStartX"></Entry>
-                        <Label Grid.Column="3" Text="Y:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="4" x:Name="RectStartY"></Entry>
-                        <Button Grid.Column="5"
-      Text="Set"
-      Clicked="SetRectStart"
-      HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,1*,3*,1*,3*,3*" Margin="20,5">
-                        <Label Grid.Column="0" Text="End" VerticalOptions="Center"></Label>
-                        <Label Grid.Column="1" Text="X:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="2" x:Name="RectEndX"></Entry>
-                        <Label Grid.Column="3" Text="Y:" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="4" x:Name="RectEndY"></Entry>
-                        <Button Grid.Column="5"
-      Text="Set"
-      Clicked="SetRectEnd"
-      HorizontalOptions="Center" />
-                    </Grid>
-                    <Grid ColumnDefinitions="3*,8*" Margin="20,5">
-                        <Label Grid.Column="0" Text="Color" VerticalOptions="Center"></Label>
-                        <Entry Grid.Column="1" x:Name="RectColor"></Entry>
-                    </Grid>
-                    <Button
-                        Margin="20,5"
-                        WidthRequest="290"
-                        x:Name="AddRectButton"
-                        Text="Add Rectangle!"
-                        Clicked="OnAddRectButtonClicked"
-                        HorizontalOptions="Center" />
+                <StackLayout x:Name="Points">
                 </StackLayout>
-                
-                <HorizontalStackLayout>
-                    <Button
-                            Margin="20,5,10,5"
-                            WidthRequest="135"
-                            x:Name="SaveButton"
-                            Text="Save!"
-                            Clicked="OnSaveClicked"
-                            HorizontalOptions="Center" />
-                    <Button
-                            Margin="10,5,20,5"
-                            WidthRequest="135"
-                            x:Name="LoadButton"
-                            Text="Load!"
-                            Clicked="OnLoadClicked"
-                            HorizontalOptions="Center" />
-                </HorizontalStackLayout>
-                <Editor Margin="10,40,0,0" Placeholder="Enter your response here" AutoSize="TextChanges" x:Name="SerialiedText" ></Editor>
-                <Button
-        Margin="20,5,20,5"
-        WidthRequest="290"
-        Text="Load!"
-        Clicked="ApplyClicked"
-        HorizontalOptions="Center" />
+
             </StackLayout>
+            
 
         </ScrollView>
         <GraphicsView Grid.Column="1" Drawable="{StaticResource myCanvas}" x:Name="Canvas" StartInteraction="Canvas_StartInteraction" EndInteraction="Canvas_EndInteraction" DragInteraction="Canvas_DragInteraction">
